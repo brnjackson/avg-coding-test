@@ -200,8 +200,7 @@ button {
 
 
 .main-container {
-    margin: 0;
-    padding: 0;
+    margin-left: 175px;
 }
 
 .header {
@@ -398,6 +397,4 @@ button {
     position: fixed;
     margin-left: 260px;
 }
-
-
 

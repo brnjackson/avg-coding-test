@@ -1,37 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- Linking the stylesheet -->
-    <link rel="stylesheet" href="./styles.css" />
-    <!-- Linking fontawesome for icons -->
+    <title>Campaign Manager</title>
+    <!-- linking stylesheet -->
+    <link rel="stylesheet" href="./styles.css">
+    <!-- linking fontawesome icons -->
     <script src="https://kit.fontawesome.com/ab51c7762a.js" crossorigin="anonymous"></script>
-    <!-- Linking Google Fonts Poppins -->
+    <!-- linking google font Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;500;800&display=swap" rel="stylesheet" />
 </head>
 
 <body>
-    <!-- Container that holds all elements -->
+    <!-- container that holds all elements -->
     <div class="container">
-        <div class="searchbar">
-    <!-- search bar container -->
-            <i class="fas fa-search"></i>
-            <input type="text" placeholder="Search..."><br />
-            <a href="#">Advanced Search</a>
-        </div>
-    
-    <!-- sidebar that includes the collapsed menu and open menu -->
-        <div class="sidebar" id="sidebar">
-    <!-- collapsed icon bar -->
-            <ul class="iconbar openNavbar" id="iconbar">
+    <!-- container that holds sidebar elements - iconbar and navbar -->
+        <div class="sidebar">
+    <!-- icon bar closed-->
+            <ul class="iconbar" id="iconbar">
                 <li>
-                    <img src="./small-logo.jpg" alt="smalllogo" />
+                    <img src="small-logo.jpg" alt="smalllogo" />
                 </li>
                 <li>
                     <a href="#"><i class="fas fa-tachometer-alt fa-1x"></i></a>
@@ -48,9 +40,8 @@
                 <li>
                     <a href="#"><i class="fas fa-chart-pie fa-1x"></i></a>
                 </li>
-
             </ul>
-    <!-- opened navigation bar-->
+    <!--  navigation bar opened-->
             <ul class="navbar" id="navbar">
                 <li>
                     <img src="./avg-logo-2.png" alt="biglogo">
@@ -80,63 +71,380 @@
                         <span class="links-name">Custom Reports</span>
                     </a>
                 </li>
-           
-        <!-- Account Login info -->
-             <span class='login-info'>
+    <!-- login info inside navbar -->
+                <span class='login-info'>
                     <i class="fas fa-user"></i>
                     <p>Welcome Stephanie!</p>
                     <a href="#">My Account</a> |
                     <a href="#">Sign Out</a>
                 </span>
-
-
             </ul>
-
         </div>
-        <!-- collapse and open buttons for the navigation -->
+    <!-- toggle open and close navigation bar arrows -->
         <div class="menu-arrows">
-
             <span class="open-arrow" id="open-arrow">
                 <i class="fas fa-angle-right" id="open-arrow"></i>
             </span>
-
             <span class="close-arrow" id="close-arrow">
-                <i class="fas fa-angle-left" id="close-arrow"></i></span>
-        
-         </div>
-        <!-- main content - includes header/favorites and live sections -->
+                <i class="fas fa-angle-left" id="close-arrow"></i>
+            </span>
+        </div>
+    <!-- container that holds header, searchbar and campaign sections -->
         <div class="main-container">
-
-        <!-- main cobtainer header -->
+    <!-- searchbar container -->
+            <div class="searchbar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search..."><br />
+                <a href="#">Advanced Search</a>
+            </div>
+    <!-- contains page title -->
             <div class="header">
                 <h1>Dashboard</h1>
                 <p>Campaign Manager</p>
             </div>
-        <!-- favorites section -->
-            <section class="favorites-section">
+    <!-- favorites section -->
+            <section class="favorites-section" id="favorites-section">
+
                 <span class="section-title">
                     <i class="far fa-star"></i>
                     <h2>Favorites</h2>
+                    <a href="#all-section" id="allbtn">See All</a>
+                </span>
+    <!-- campaign scroll buttons -->
+                <div class="arrow-container">
+                    <button class="scroll-left" id="scroll-left"><i class="fas fa-chevron-left"></i></button>
+
+                    <button class="scroll-right" id="scroll-right"><i class="fas fa-chevron-right"></i></button>
+                </div>
+    <!-- container to hold scrolling items -->
+                <div class="horizontal-scroll" id="horizontal-scroll">
+    <!-- popout menu shown when menu button clicked -->
+                    <div class="popout-menu" id="popout-menu">
+                        <ul class="hidden-menu closed" id="hidden-menu">
+                            <i class="fas fa-times" id="closemenu-btn"></i>
+                            <li><a href="#">View Campaign Details</a></li>
+                            <li><a href="#">Edit Campaign</a></li>
+                            <li><a href="#">View Submissions</a></li>
+                            <li><a href="#">Download Submissions</a></li>
+                            <li><a href="#">Remove Favorite</a></li>
+                        </ul>
+                    </div>
+    <!-- second popout menu -->
+                    <div class="popout-menu" id="popout-menu2">
+                        <ul id="menu2">
+                            <i class="fas fa-times" id="closemenu-btn2"></i>
+                            <li><a href="#">View Campaign Details</a></li>
+                            <li><a href="#">Edit Campaign</a></li>
+                            <li><a href="#">View Submissions</a></li>
+                            <li><a href="#">Download Submissions</a></li>
+                            <li><a href="#">Remove Favorite</a></li>
+                        </ul>
+                    </div>
+    <!-- start of campaign cards -->
+    <!-- card 1 -->
+                    <div class="campaign-card">
+                        <h3>AVI1958872W - Ended</h3>
+                        <i class="menubtn fas fa-ellipsis-v" id="menubtn" class="menubtn"></i>
+                        <hr />
+                            <div class="campaign-type">
+                                <i class="fas fa-project-diagram"></i><span>1</span>
+                            </div>
+                            <span class="campaign-text">
+                                <b>Loyalty</b><br />
+                                Wine Cooler Loyalty Program<br />
+                                winecoolerdeal.com <br />
+                                06/01/20 - 07/15/2021
+                            </span>
+                            <div class="stats-box">
+                                <span class="stat">
+                                    <i class="fas fa-mail-bulk fa-1x"></i>254
+                                </span>
+                                <span class="stat">
+                                    <i class="fas fa-users fa-1x"></i>197
+                                </span>
+                                <span class="stat">
+                                    <i class="fas fa-tshirt"></i>72
+                                </span>
+
+                                <span class="stat">
+                                    <i class="fas fa-receipt"></i>26
+                                </span>
+                            </div>
+                    </div>
+    <!-- card2 -->
+                    <div class="campaign-card">
+                        <h3>AVI1958872W - Ended</h3>
+                        <i class="menubtn fas fa-ellipsis-v" id="menubtn2" class="menubtn2"></i>
+                        <hr />
+                            <div class="campaign-type">
+                                <i class="fas fa-project-diagram"></i><span>1</span>
+                            </div>
+                            <span class="campaign-text">
+                                <b>Loyalty</b><br />
+                                Wine Cooler Loyalty Program<br />
+                                winecoolerdeal.com <br />
+                                06/01/20 - 07/15/2021
+                            </span>
+                            <div class="stats-box">
+                                <span class="stat">
+                                    <i class="fas fa-mail-bulk fa-1x"></i>254
+                                </span>
+                                <span class="stat">
+                                    <i class="fas fa-users fa-1x"></i>197
+                                </span>
+
+                                <span class="stat">
+                                    <i class="fas fa-tshirt"></i>72
+                                </span>
+
+                                <span class="stat">
+                                    <i class="fas fa-receipt"></i>26
+                                </span>
+                            </div>
+                    </div>
+    <!-- card3 -->
+                    <div class="campaign-card">
+                        <h3>AVI1958872W - Ended</h3>
+                        <i class="menubtn fas fa-ellipsis-v" id="menubtn" class="menubtn"></i>
+                        <hr />
+                            <div class="campaign-type">
+                                <i class="fas fa-project-diagram"></i><span>1</span>
+                            </div>
+                            <span class="campaign-text">
+                                <b>Loyalty</b><br />
+                                Wine Cooler Loyalty Program<br />
+                                winecoolerdeal.com <br />
+                                06/01/20 - 07/15/2021
+                            </span>
+                            <div class="stats-box">
+                                <span class="stat">
+                                    <i class="fas fa-mail-bulk fa-1x"></i>254
+                                </span>
+                                <span class="stat">
+                                    <i class="fas fa-users fa-1x"></i>197
+                                </span>
+
+                                <span class="stat">
+                                    <i class="fas fa-tshirt"></i>72
+                                </span>
+
+                                <span class="stat">
+                                    <i class="fas fa-receipt"></i>26
+                                </span>
+                            </div>
+                    </div>
+    <!-- card4 -->
+                    <div class="campaign-card">
+                        <h3>AVI1958872W - Ended</h3>
+                        <i class="menubtn fas fa-ellipsis-v" id="menubtn" class="menubtn"></i>
+                        <hr />
+                            <div class="campaign-type">
+                                <i class="fas fa-project-diagram"></i><span>1</span>
+                            </div>
+                            <span class="campaign-text">
+                                <b>Loyalty</b><br />
+                                Wine Cooler Loyalty Program<br />
+                                winecoolerdeal.com <br />
+                                06/01/20 - 07/15/2021
+                            </span>
+                            <div class="stats-box">
+                                <span class="stat">
+                                    <i class="fas fa-mail-bulk fa-1x"></i>254
+                                </span>
+                                <span class="stat">
+                                    <i class="fas fa-users fa-1x"></i>197
+                                </span>
+
+                                <span class="stat">
+                                    <i class="fas fa-tshirt"></i>72
+                                </span>
+
+                                <span class="stat">
+                                    <i class="fas fa-receipt"></i>26
+                                </span>
+                            </div>
+                    </div>
+    <!-- card5 -->
+                    <div class="campaign-card">
+                        <h3>AVI1958872W - Ended</h3>
+                        <i class="menubtn fas fa-ellipsis-v" id="menubtn" class="menubtn"></i>
+                        <hr />
+                            <div class="campaign-type">
+                                <i class="fas fa-project-diagram"></i><span>1</span>
+                            </div>
+                            <span class="campaign-text">
+                                <b>Loyalty</b><br />
+                                Wine Cooler Loyalty Program<br />
+                                winecoolerdeal.com <br />
+                                06/01/20 - 07/15/2021
+                            </span>
+                            <div class="stats-box">
+                                <span class="stat">
+                                    <i class="fas fa-mail-bulk fa-1x"></i>254
+                                </span>
+                                <span class="stat">
+                                    <i class="fas fa-users fa-1x"></i>197
+                                </span>
+
+                                <span class="stat">
+                                    <i class="fas fa-tshirt"></i>72
+                                </span>
+
+                                <span class="stat">
+                                    <i class="fas fa-receipt"></i>26
+                                </span>
+                            </div>
+                    </div>
+            </section>
+
+    <!-- Currently Live section -->
+            <section class="live-section" id="live-section">
+                
+                <span class="section-title">
+                    <i class="far fa-calendar-alt"></i>
+                    <h2>Currently Live</h2>
                     <a href="#">See All</a>
                 </span>
-        <!-- container that holds campaign cards and includes scrolling with arrows -->
-        <!-- also includes popout menus-->
-                <div class="horizontal-scroll" id="horizontal-scroll">
-                    <div class="campaign-container" id="campaign-container">
-                        <div class="popout-menu" id="popout-menu">
-                            <ul class="hidden-menu closed" id="hidden-menu">
-                                <i class="fas fa-times" id="closemenu-btn"></i>
-                                <li><a href="#">View Campaign Details</a></li>
-                                <li><a href="#">Edit Campaign</a></li>
-                                <li><a href="#">View Submissions</a></li>
-                                <li><a href="#">Download Submissions</a></li>
-                                <li><a href="#">Remove Favorite</a></li>
-                            </ul>
+    <!-- campaign scroll buttons -->
+                <div class="arrow-container">
+                    <button class="scroll-left" id="scroll-left"><i class="fas fa-chevron-left"></i></button>
+
+                    <button class="scroll-right" id="scroll-right"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="horizontal-scroll">
+    <!-- start of campaign cards -->
+    <!-- card 1 -->
+                <div class="campaign-card">
+                    <h3>AVI1958872W - Ended</h3>
+                    <i class="menubtn fas fa-ellipsis-v" id="menubtn" class="menubtn"></i>
+                    <hr />
+                        <div class="campaign-type">
+                            <i class="fas fa-project-diagram"></i><span>1</span>
                         </div>
+                        <span class="campaign-text">
+                            <b>Loyalty</b><br />
+                            Wine Cooler Loyalty Program<br />
+                            winecoolerdeal.com <br />
+                            06/01/20 - 07/15/2021
+                        </span>
+                        <div class="stats-box">
+                            <span class="stat">
+                                <i class="fas fa-mail-bulk fa-1x"></i>254
+                            </span>
+                            <span class="stat">
+                                <i class="fas fa-users fa-1x"></i>197
+                            </span>
+
+                            <span class="stat">
+                                <i class="fas fa-tshirt"></i>72
+                            </span>
+
+                            <span class="stat">
+                                <i class="fas fa-receipt"></i>26
+                            </span>
+                        </div>
+                </div>
+    <!-- card2 -->
+                <div class="campaign-card">
+                    <h3>AVI1958872W - Ended</h3>
+                    <i class="menubtn fas fa-ellipsis-v" id="menubtn" class="menubtn"></i>
+                    <hr />
+                        <div class="campaign-type">
+                            <i class="fas fa-project-diagram"></i><span>1</span>
+                        </div>
+                        <span class="campaign-text">
+                            <b>Loyalty</b><br />
+                            Wine Cooler Loyalty Program<br />
+                            winecoolerdeal.com <br />
+                            06/01/20 - 07/15/2021
+                        </span>
+                        <div class="stats-box">
+                            <span class="stat">
+                                <i class="fas fa-mail-bulk fa-1x"></i>254
+                            </span>
+                            <span class="stat">
+                                <i class="fas fa-users fa-1x"></i>197
+                            </span>
+
+                            <span class="stat">
+                                <i class="fas fa-tshirt"></i>72
+                            </span>
+
+                            <span class="stat">
+                                <i class="fas fa-receipt"></i>26
+                            </span>
+                        </div>
+                </div>
+
+                    <!-- card5 -->
+                    <div class="campaign-card">
+                        <h3>AVI1958872W - Ended</h3>
+                        <i class="menubtn fas fa-ellipsis-v" id="menubtn" class="menubtn"></i>
+                        <hr />
+                            <div class="campaign-type">
+                                <i class="fas fa-project-diagram"></i><span>1</span>
+                            </div>
+                            <span class="campaign-text">
+                                <b>Loyalty</b><br />
+                                Wine Cooler Loyalty Program<br />
+                                winecoolerdeal.com <br />
+                                06/01/20 - 07/15/2021
+                            </span>
+                            <div class="stats-box">
+                                <span class="stat">
+                                    <i class="fas fa-mail-bulk fa-1x"></i>254
+                                </span>
+                                <span class="stat">
+                                    <i class="fas fa-users fa-1x"></i>197
+                                </span>
+
+                                <span class="stat">
+                                    <i class="fas fa-tshirt"></i>72
+                                </span>
+
+                                <span class="stat">
+                                    <i class="fas fa-receipt"></i>26
+                                </span>
+                            </div>
+                    </div>
+
+                        <!-- card5 -->
                         <div class="campaign-card">
                             <h3>AVI1958872W - Ended</h3>
                             <i class="menubtn fas fa-ellipsis-v" id="menubtn" class="menubtn"></i>
                             <hr />
+                                <div class="campaign-type">
+                                    <i class="fas fa-project-diagram"></i><span>1</span>
+                                </div>
+                                <span class="campaign-text">
+                                    <b>Loyalty</b><br />
+                                    Wine Cooler Loyalty Program<br />
+                                    winecoolerdeal.com <br />
+                                    06/01/20 - 07/15/2021
+                                </span>
+                                <div class="stats-box">
+                                    <span class="stat">
+                                        <i class="fas fa-mail-bulk fa-1x"></i>254
+                                    </span>
+                                    <span class="stat">
+                                        <i class="fas fa-users fa-1x"></i>197
+                                    </span>
+    
+                                    <span class="stat">
+                                        <i class="fas fa-tshirt"></i>72
+                                    </span>
+    
+                                    <span class="stat">
+                                        <i class="fas fa-receipt"></i>26
+                                    </span>
+                                </div>
+                        </div>
+
+                            <!-- card5 -->
+                    <div class="campaign-card">
+                        <h3>AVI1958872W - Ended</h3>
+                        <i class="menubtn fas fa-ellipsis-v" id="menubtn" class="menubtn"></i>
+                        <hr />
                             <div class="campaign-type">
                                 <i class="fas fa-project-diagram"></i><span>1</span>
                             </div>
@@ -150,122 +458,6 @@
                                 <span class="stat">
                                     <i class="fas fa-mail-bulk fa-1x"></i>254
                                 </span>
-
-                                <span class="stat">
-                                    <i class="fas fa-users fa-1x"></i>197
-                                </span>
-
-                                <span class="stat">
-                                    <i class="fas fa-tshirt"></i>72
-                                </span>
-
-                                <span class="stat">
-                                    <i class="fas fa-receipt"></i>26
-                                </span>
-
-
-
-                            </div>
-
-                        </div>
-                        <div class="popout-menu" id="popout-menu2">
-                            <ul id="menu2">
-                                <i class="fas fa-times" id="closemenu-btn2"></i>
-                                <li><a href="#">View Campaign Details</a></li>
-                                <li><a href="#">Edit Campaign</a></li>
-                                <li><a href="#">View Submissions</a></li>
-                                <li><a href="#">Download Submissions</a></li>
-                                <li><a href="#">Remove Favorite</a></li>
-                            </ul>
-                        </div>
-                        <div class="campaign-card">
-                            <h3>AVI1958872W - Ended</h3>
-                            <i class="fas fa-ellipsis-v" id="menubtn2" class="menubtn"></i>
-                            <hr />
-                            <div class="campaign-type">
-                                <i class="fas fa-project-diagram"></i><span>1</span>
-                            </div>
-                            <span class="campaign-text">
-                                <b>Loyalty</b><br />
-                                Wine Cooler Loyalty Program<br />
-                                winecoolerdeal.com <br />
-                                06/01/20 - 07/15/2021
-                            </span>
-                            <div class="stats-box">
-                                <span class="stat">
-                                    <i class="fas fa-mail-bulk fa-1x"></i>254
-                                </span>
-
-                                <span class="stat">
-                                    <i class="fas fa-users fa-1x"></i>197
-                                </span>
-
-                                <span class="stat">
-                                    <i class="fas fa-tshirt"></i>72
-                                </span>
-
-                                <span class="stat">
-                                    <i class="fas fa-receipt"></i>26
-                                </span>
-
-
-
-                            </div>
-
-                        </div>
-                        <div class="campaign-card">
-                            <h3>AVI1958872W - Ended</h3>
-                            <i class="fas fa-ellipsis-v" id="menubtn"></i>
-                            <hr />
-                            <div class="campaign-type">
-                                <i class="fas fa-project-diagram"></i><span>1</span>
-                            </div>
-                            <span class="campaign-text">
-                                <b>Loyalty</b><br />
-                                Wine Cooler Loyalty Program<br />
-                                winecoolerdeal.com <br />
-                                06/01/20 - 07/15/2021
-                            </span>
-                            <div class="stats-box">
-                                <span class="stat">
-                                    <i class="fas fa-mail-bulk fa-1x"></i>254
-                                </span>
-
-                                <span class="stat">
-                                    <i class="fas fa-users fa-1x"></i>197
-                                </span>
-
-                                <span class="stat">
-                                    <i class="fas fa-tshirt"></i>72
-                                </span>
-
-                                <span class="stat">
-                                    <i class="fas fa-receipt"></i>26
-                                </span>
-
-
-
-                            </div>
-
-                        </div>
-                        <div class="campaign-card">
-                            <h3>AVI1958872W - Ended</h3>
-                            <i class="fas fa-ellipsis-v"></i>
-                            <hr />
-                            <div class="campaign-type">
-                                <i class="fas fa-project-diagram" id="menubtn"></i><span>1</span>
-                            </div>
-                            <span class="campaign-text">
-                                <b>Loyalty</b><br />
-                                Wine Cooler Loyalty Program<br />
-                                winecoolerdeal.com <br />
-                                06/01/20 - 07/15/2021
-                            </span>
-                            <div class="stats-box">
-                                <span class="stat">
-                                    <i class="fas fa-mail-bulk fa-1x"></i>254
-                                </span>
-
                                 <span class="stat">
                                     <i class="fas fa-users fa-1x"></i>197
                                 </span>
@@ -278,94 +470,16 @@
                                     <i class="fas fa-receipt"></i>26
                                 </span>
                             </div>
-
-                        </div>
-                        <div class="campaign-card">
-                            <h3>AVI1958872W - Ended</h3>
-                            <i class="fas fa-ellipsis-v"></i>
-                            <hr />
-                            <div class="campaign-type">
-                                <i class="fas fa-project-diagram" id="menubtn"></i><span>1</span>
-                            </div>
-                            <span class="campaign-text">
-                                <b>Loyalty</b><br />
-                                Wine Cooler Loyalty Program<br />
-                                winecoolerdeal.com <br />
-                                06/01/20 - 07/15/2021
-                            </span>
-                            <div class="stats-box">
-                                <span class="stat">
-                                    <i class="fas fa-mail-bulk fa-1x"></i>254
-                                </span>
-
-                                <span class="stat">
-                                    <i class="fas fa-users fa-1x"></i>197
-                                </span>
-
-                                <span class="stat">
-                                    <i class="fas fa-tshirt"></i>72
-                                </span>
-
-                                <span class="stat">
-                                    <i class="fas fa-receipt"></i>26
-                                </span>
-                            </div>
-
-                        </div>
-
                     </div>
-                </div>
-                <div class="arrow-container">
-                    <button class="scroll-left" id="scroll-left"><i class="fas fa-chevron-left"></i>
-                </div>
-                <button class="scroll-right" id="scroll-right"><i class="fas fa-chevron-right"></i>
+            </div>
+
+            </section>
+
         </div>
     </div>
-    </section>
-
-    <!-- Live Section -->
-    <section class="live-section">
-        <span class="section-title">
-            <i class="far fa-calendar-alt"></i>
-            <h2>Currently Live</h2>
-            <a href="#">See All</a>
-        </span>
-        <div class="campaign-card">
-            <h3>AVI1958872W - Ended</h3>
-            <i class="fas fa-ellipsis-v"></i>
-            <hr />
-            <div class="campaign-type">
-                <i class="fas fa-project-diagram"></i><span>1</span>
-            </div>
-            <span class="campaign-text">
-                <b>Loyalty</b><br />
-                Wine Cooler Loyalty Program<br />
-                winecoolerdeal.com <br />
-                06/01/20 - 07/15/2021
-            </span>
-            <div class="stats-box">
-                <span class="stat">
-                    <i class="fas fa-mail-bulk fa-1x"></i>254
-                </span>
-
-                <span class="stat">
-                    <i class="fas fa-users fa-1x"></i>197
-                </span>
-
-                <span class="stat">
-                    <i class="fas fa-tshirt"></i>72
-                </span>
-
-                <span class="stat">
-                    <i class="fas fa-receipt"></i>26
-                </span>
-            </div>
-        </div>
-    </section>
-    </div>
-    </div>
-
+    
+    <!-- linking javascript file -->
     <script src="./script.js"></script>
-</body>
 
+</body>
 </html>

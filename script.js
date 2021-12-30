@@ -56,10 +56,12 @@ let container = document.getElementById("horizontal-scroll")
 
 
 leftArrow.addEventListener('click', () => {
+  console.log("WTF")
   container.scrollLeft -= 200
 })
 
 rightArrow.addEventListener('click', () => {
+  console.log("WTF brittney")
   container.scrollLeft += 200
 })
 
